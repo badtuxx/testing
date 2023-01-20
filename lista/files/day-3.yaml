@@ -2,19 +2,25 @@ apiVersion: app/v1
 kind: Deployment
 metadata:
   label:
-    app: nginx-deployment
-name: nginx-deployment
+    app: nginx-girus
+    opa: sensacional-juvenal
+name: nginx-girus
 specs:
-  replicas: 10
+  replicas: 5
     selector:
       matchLabels:
-      app: nginx-deployment
+      app: nginx-girus
   strategies:
     type: recreate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 2
+  strategies: {}
+  replicas: 2
   template:
     metadata:
     label:
-      app: nginx-deployment
+      app: nginx
     specs:
       containers:
       - image: nginx 1.15.0
