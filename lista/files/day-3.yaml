@@ -25,10 +25,4 @@ specs:
       containers:
       - image: nginx 1.15.0
         name: nginx
-        resources:
-          limits:
-            cpu: "1.5"
-            memory: 256Ml
-          requests:
-            cpu: 1.25
-            memory: 128Ml
+        resource: {}
